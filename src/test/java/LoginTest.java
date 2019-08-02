@@ -29,6 +29,7 @@ public class LoginTest {
         driver.findElement(By.xpath("//*[@id=\"identifierNext\"]/span/span")).click();
                 Thread.sleep(3000);
         driver.findElement(By.name("password")).sendKeys("abvd");
+        driver.findElement(By.xpath("//*[@id=\"passwordNext\"]/span/span")).click();
             }
             @AfterSuite
     public void tearDown() throws InterruptedException {
