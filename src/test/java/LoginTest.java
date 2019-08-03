@@ -12,28 +12,30 @@ import java.net.MalformedURLException;
 public class LoginTest {
     public static WebDriver driver;
 
-   @BeforeSuite
+    @BeforeSuite
     public void setUP() {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\mortu\\IdeaProjects\\SeleniumLearning\\downloads\\chromedriver.exe");
         driver = new ChromeDriver();
     }
 
-            @Test
-            public void doLogin() throws MalformedURLException, InterruptedException {
+    @Test
+
+
+    public void doLogin() throws MalformedURLException, InterruptedException {
         driver.get("https://www.gmail.com");
         Thread.sleep(3000);
-        //driver.findElement(By.xpath("/html/body/div[2]/div[1]/div[4]/ul[1]/li[2]/a")).click();
-               // Thread.sleep(3000);
         driver.findElement(By.id("identifierId")).sendKeys("mortuzakamal2010@gmail.com");
-                Thread.sleep(3000);
+        Thread.sleep(3000);
         driver.findElement(By.xpath("//*[@id=\"identifierNext\"]/span/span")).click();
-                Thread.sleep(3000);
+        Thread.sleep(3000);
         driver.findElement(By.name("password")).sendKeys("abvd");
-        driver.findElement(By.xpath("//*[@id=\"passwordNext\"]/span/span")).click();
-            }
-            @AfterSuite
+        Thread.sleep(3000);
+        //driver.findElement(By.xpath("//*[@id=\"passwordNext\"]/span/span")).click();
+    }
+
+    @AfterSuite
     public void tearDown() throws InterruptedException {
-       Thread.sleep(3000);
+        //Thread.sleep(3000);
         driver.quit();
-            }
+    }
 }
